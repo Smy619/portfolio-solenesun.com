@@ -1,6 +1,7 @@
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from "react";
+import profileImg from "../assets/img/profile-img.jpg";
 import "../assets/css/main.css";
 
 function About() {
@@ -27,7 +28,7 @@ function About() {
         <div className="row gy-4">
           <div className="col-lg-4" data-aos="fade-right" data-aos-delay="100">
           <img 
-            src="/assets/img/profile-img.jpg"
+            src={profileImg}
             className='img-fluid rounded'
             alt="Profile"
           />

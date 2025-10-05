@@ -1,6 +1,8 @@
 import { useEffect, useRef } from "react";
 import Typed from "typed.js";
 import AOS from 'aos';
+import heroImg from "../assets/img/hero-bg.jpg";
+
 import 'aos/dist/aos.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../assets/css/main.css";
@@ -25,7 +27,7 @@ function Hero() {
 
   return (
     <section id="hero" className="hero d-flex align-items-center  justify-content-center">
-      <img src="/assets/img/hero-bg.jpg" alt="Background" data-aos="fade-in" />
+      <img src={heroImg} alt="Background" data-aos="fade-in" />
 
       <div className="container text-center" data-aos="fade-up" data-aos-delay="100">
         <h2 className="mb-2">TING SUN</h2>
