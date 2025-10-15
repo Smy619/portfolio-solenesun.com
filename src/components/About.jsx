@@ -38,7 +38,7 @@ function About() {
                   <li>
                     <i className="bi bi-chevron-right"></i>
                     <strong>Website:</strong>{" "}
-                    <span>www.portfolio-solensun.com</span>
+                    <span>www.solensun.com</span>
                   </li>
                   <li>
                     <i className="bi bi-chevron-right"></i>
@@ -60,7 +60,7 @@ function About() {
                   </li>
                   <li>
                     <i className="bi bi-chevron-right"></i>
-                    <strong>Email:</strong> <span>solene.s2025@gmail.com</span>
+                    <strong>Email:</strong> <span>contact@solenesun.com</span>
                   </li>
                   <li>
                     <i className="bi bi-chevron-right"></i>
