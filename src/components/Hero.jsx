@@ -45,7 +45,7 @@ function Hero() {
           <a href="https://www.facebook.com/TingSunDev/" className="me-3">
             <i className="bi bi-facebook"></i>
           </a>
-          <a href="mailto:solene.s2025@gmail.com">
+          <a href="mailto:contact@solenesun.com">
             <i className="bi bi-envelope"></i>
           </a>
          </div>
