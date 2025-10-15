@@ -1,0 +1,51 @@
+/* =========================================================
+   📊 Stats Section
+   Author: Ting Sun
+   Project: MyResume (React + Vite)
+   Description: Number statistics section with icons and labels.
+   ========================================================= */
+
+@use './variables';
+
+/* ----------------------------
+   Stats Section
+---------------------------- */
+.stats {
+  text-align: center;
+
+  i {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+    width: 54px;
+    height: 54px;
+    font-size: 24px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 10px;
+  }
+
+  .stats-item {
+    margin-top: 10px;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    z-index: 0;
+
+    span {
+      font-size: 36px;
+      display: block;
+      font-weight: 700;
+      color: color-mix(in srgb, var(--default-color), transparent 20%);
+    }
+
+    p {
+      margin: 0;
+      color: color-mix(in srgb, var(--default-color), transparent 50%);
+      font-size: 16px;
+    }
+  }
+}

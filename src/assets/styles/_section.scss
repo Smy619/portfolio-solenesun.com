@@ -1,0 +1,106 @@
+/* =========================================================
+   🧭 Section Styles
+   Author: Ting Sun
+   Project: MyResume (React + Vite)
+   Description: Global sections, titles, and breadcrumbs.
+   ========================================================= */
+
+@use './variables';
+
+/* ----------------------------
+   Page Title (Breadcrumb Section)
+---------------------------- */
+.page-title {
+  --background-color: color-mix(in srgb, var(--default-color), transparent 96%);
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 20px 0;
+  position: relative;
+
+  h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .breadcrumbs {
+    ol {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      padding: 0 0 10px 0;
+      margin: 0;
+      font-size: 14px;
+      font-weight: 400;
+
+      li + li {
+        padding-left: 10px;
+
+        &::before {
+          content: "/";
+          display: inline-block;
+          padding-right: 10px;
+          color: color-mix(in srgb, var(--default-color), transparent 70%);
+        }
+      }
+    }
+  }
+}
+
+/* ----------------------------
+   Global Sections
+---------------------------- */
+section,
+.section {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 60px 0;
+  overflow: clip;
+}
+
+/* ----------------------------
+   Section Titles
+---------------------------- */
+.section-title {
+  text-align: center;
+  padding-bottom: 60px;
+  position: relative;
+
+  h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 160px;
+      height: 1px;
+      background: color-mix(in srgb, var(--default-color), transparent 60%);
+      left: 0;
+      right: 0;
+      bottom: 1px;
+      margin: auto;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: var(--accent-color);
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+    }
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}

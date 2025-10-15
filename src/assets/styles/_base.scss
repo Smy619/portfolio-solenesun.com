@@ -1,0 +1,49 @@
+/* =========================================================
+   🧱 Base Styles
+   Author: Ting Sun
+   Project: MyResume (React + Vite)
+   Description: Global base styles applied to all pages.
+   ========================================================= */
+
+@use "./variables";
+
+/* ----------------------------
+   Global Elements
+---------------------------- */
+body {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-family: var(--default-font);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* ----------------------------
+   Links
+---------------------------- */
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+a:hover {
+  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  text-decoration: none;
+}
+
+/* ----------------------------
+   Headings
+---------------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+}

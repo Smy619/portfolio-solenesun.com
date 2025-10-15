@@ -1,0 +1,47 @@
+/* =========================================================
+   🌈 Global Variables
+   Author: Ting Sun
+   Project: MyResume (React + Vite)
+   Description: All global variables for typography, color, and behavior.
+   ========================================================= */
+
+:root {
+
+  /* ----------------------------
+     Font Families
+  ---------------------------- */
+  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Raleway", sans-serif;
+  --nav-font: "Poppins", sans-serif;
+
+  /* ----------------------------
+     Global Colors
+  ---------------------------- */
+  --background-color: #ffffff; /* Base background for site */
+  --default-color: #272829; /* Default text */
+  --heading-color: #45505b; /* Titles / Headings */
+  --accent-color: #0563bb; /* Brand accent */
+  --surface-color: #ffffff; /* Box / Card background */
+  --contrast-color: #ffffff; /* Text contrast on dark bg */
+
+  /* ----------------------------
+     Navigation Colors
+  ---------------------------- */
+  --nav-color: #45505b; /* Default nav link color */
+  --nav-hover-color: #0563bb; /* Active / hover link */
+  --nav-mobile-background-color: #ffffff;
+  --nav-dropdown-background-color: #ffffff;
+  --nav-dropdown-color: #212529;
+  --nav-dropdown-hover-color: #0563bb;
+
+  /* ----------------------------
+     Color Presets (Light / Dark)
+  ---------------------------- */
+  --light-bg: #f9f9f9;
+  --dark-bg: #060606;
+
+  /* ----------------------------
+     Miscellaneous
+  ---------------------------- */
+  scroll-behavior: smooth;
+}

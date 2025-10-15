@@ -1,6 +1,7 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
-import "../assets/css/main.css";
+import "../assets/styles/_skills.scss";
+import "../assets/styles/_resume.scss";
 import { useEffect } from "react";
 
 function SkillsAndResume() {
@@ -29,7 +30,7 @@ function SkillsAndResume() {
                   HTML <i className="val">100%</i>
                 </span>
                 <div className="progress-bar-wrap">
-                  <div className="progress-bar" style={{ width: "100%" }}></div>
+                  <div className="progress-bar" style={{ width: "100%" }} aria-label="Html skill 90%"></div>
                 </div>
               </div>
 
@@ -38,7 +39,7 @@ function SkillsAndResume() {
                   CSS / SCSS <i className="val">95%</i>
                 </span>
                 <div className="progress-bar-wrap">
-                  <div className="progress-bar" style={{ width: "95%" }}></div>
+                  <div className="progress-bar" style={{ width: "95%" }} aria-label="CSS skill 90%"></div>
                 </div>
               </div>
 
@@ -47,7 +48,7 @@ function SkillsAndResume() {
                   JavaScript <i className="val">90%</i>
                 </span>
                 <div className="progress-bar-wrap">
-                  <div className="progress-bar" style={{ width: "90%" }}></div>
+                  <div className="progress-bar" style={{ width: "90%" }} aria-label="JavaScript skill 90%"></div>
                 </div>
               </div>
             </div>
@@ -58,7 +59,7 @@ function SkillsAndResume() {
                   React.js <i className="val">85%</i>
                 </span>
                 <div className="progress-bar-wrap">
-                  <div className="progress-bar" style={{ width: "85%" }}></div>
+                  <div className="progress-bar" style={{ width: "85%" }} aria-label="React skill 90%"></div>
                 </div>
               </div>
 
@@ -67,7 +68,7 @@ function SkillsAndResume() {
                   WordPress <i className="val">90%</i>
                 </span>
                 <div className="progress-bar-wrap">
-                  <div className="progress-bar" style={{ width: "90%" }}></div>
+                  <div className="progress-bar" style={{ width: "90%" }} aria-label="WordPress skill 90%"></div>
                 </div>
               </div>
 
@@ -76,7 +77,7 @@ function SkillsAndResume() {
                   SEO / Performance <i className="val">85%</i>
                 </span>
                 <div className="progress-bar-wrap">
-                  <div className="progress-bar" style={{ width: "85%" }}></div>
+                  <div className="progress-bar" style={{ width: "85%" }} aria-label="SEO skill 90%"></div>
                 </div>
               </div>
             </div>

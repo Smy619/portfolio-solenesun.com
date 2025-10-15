@@ -1,0 +1,58 @@
+/* =========================================================
+   💼 Skills Section
+   Author: Ting Sun
+   Project: MyResume (React + Vite)
+   Description: Skill progress bars with labels and animated fill.
+   ========================================================= */
+
+@use "./variables";
+
+/* ----------------------------
+   Skills Section
+---------------------------- */
+.skills {
+  .progress {
+    height: 60px;
+    display: block;
+    background: none;
+    border-radius: 0;
+
+    /* Skill label */
+    .skill {
+      color: var(--heading-color);
+      padding: 0;
+      margin: 0 0 6px 0;
+      text-transform: uppercase;
+      display: block;
+      font-weight: 600;
+      font-family: var(--heading-font);
+
+      /* Value on right side */
+      .val {
+        float: right;
+        font-style: normal;
+      }
+    }
+
+    /* Progress bar container */
+    .progress-bar-wrap {
+      background: color-mix(in srgb, var(--default-color), transparent 90%);
+      height: 10px;
+
+      /* Animated progress bar */
+      .progress-bar {
+        width: 1px;
+        height: 10px;
+        background-color: var(--accent-color);
+        transition: width 1s ease-in-out, background-color 0.3s ease;
+        &:hover {
+          background-color: color-mix(
+            in srgb,
+            var(--accent-color),
+            transparent 20%
+          );
+        }
+      }
+    }
+  }
+}

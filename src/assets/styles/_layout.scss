@@ -1,0 +1,234 @@
+/* =========================================================
+   🧩 Layout Styles
+   Author: Ting Sun
+   Project: MyResume (React + Vite)
+   Description: Header, Navmenu, Footer, Preloader, Scroll-top.
+   ========================================================= */
+
+@use './variables';
+
+/* ----------------------------
+   Header
+---------------------------- */
+.header {
+  color: var(--default-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding: 0 15px;
+  transition: all ease-in-out 0.3s;
+  overflow-y: auto;
+  z-index: 997;
+  min-width: 200px;
+  /* ---------- When Sidebar is Open ---------- */
+  &.header-show {
+    left: 0;
+  }
+
+  /* ---------- Toggle Button ---------- */
+  .header-toggle {
+    color: var(--contrast-color);
+    background-color: var(--accent-color);
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 9999;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      color: var(--contrast-color);
+      background-color: color-mix(in srgb, var(--accent-color), transparent 10%);
+    }
+  }
+}
+
+/* ----------------------------
+   Navmenu
+---------------------------- */
+.navmenu {
+  padding: 0;
+  z-index: 9997;
+
+  ul {
+    list-style: none;
+    padding: 0 0 20px 0;
+    margin: 0;
+    width: 80px;
+  }
+
+  a,
+  a:focus {
+    color: var(--nav-color);
+    font-family: var(--nav-font);
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    padding: 10px;
+    margin-bottom: 8px;
+    font-size: 20px;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--default-color), transparent 92%);
+    width: 56px;
+    height: 56px;
+    transition:
+      background-color 0.4s ease,
+      color 0.4s ease,
+      transform 0.25s ease;;
+
+    i {
+      font-size: 22px;
+      transition: transform 0.3s ease, color 0.3s ease; 
+    }
+    span {
+      display: none;
+    }
+  }
+
+  a:hover,
+  .active,
+  .active:focus,
+  li:hover > a {
+    color: var(--contrast-color);
+    background: var(--nav-hover-color);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+    i {
+      transform: scale(1.15);
+      transform: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+}
+
+/* ----------------------------
+   Footer
+---------------------------- */
+.footer {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-size: 14px;
+  text-align: center;
+  padding: 30px 0;
+  position: relative;
+
+  h3 {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+  }
+
+  p {
+    font-size: 15px;
+    font-style: italic;
+    margin: 0 0 30px 0;
+  }
+
+  .social-links {
+    margin: 0 0 30px 0;
+
+    a {
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--accent-color);
+      color: var(--contrast-color);
+      margin: 0 4px;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      transition: 0.3s;
+
+      &:hover {
+        background: color-mix(in srgb, var(--accent-color), transparent 20%);
+        text-decoration: none;
+      }
+    }
+  }
+
+  .copyright {
+    padding-top: 25px;
+    border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  }
+
+  .credits {
+    font-size: 13px;
+    padding-top: 5px;
+  }
+}
+
+/* ----------------------------
+   Preloader
+---------------------------- */
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  overflow: hidden;
+  background: var(--background-color);
+  transition: all 0.6s ease-out;
+
+  &::before {
+    content: "";
+    position: fixed;
+    top: calc(50% - 30px);
+    left: calc(50% - 30px);
+    border: 6px solid #ffffff;
+    border-color: var(--accent-color) transparent var(--accent-color) transparent;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: animate-preloader 1.5s linear infinite;
+  }
+}
+
+@keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ----------------------------
+   Scroll Top Button
+---------------------------- */
+.scroll-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: -15px;
+  z-index: 99999;
+  background-color: var(--accent-color);
+  width: 44px;
+  height: 44px;
+  border-radius: 50px;
+  transition: all 0.4s;
+
+  i {
+    font-size: 24px;
+    color: var(--contrast-color);
+    line-height: 0;
+  }
+
+  &:hover {
+    background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+    color: var(--contrast-color);
+  }
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+    bottom: 15px;
+  }
+}

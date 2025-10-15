@@ -1,0 +1,176 @@
+/* =========================================================
+   📱 Responsive Design
+   Author: Ting Sun
+   Description: Centralized responsive breakpoints from MyResume.
+   ========================================================= */
+
+/* 🖥️ Large screens (min-width: 1200px and max-width: 1600px) */
+@media (min-width: 1200px) and (max-width: 1600px) {
+  .header~main {
+    margin-left: 160px;
+  }
+
+  .header~main .hero {
+    margin-left: -160px;
+    width: 100vw;
+  }
+}
+
+/* 💻 Desktops & laptops (max-width: 1199px) */
+@media (max-width: 1199px) {
+  .header {
+    background-color: var(--background-color);
+    border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+    width: 300px;
+    left: -100%;
+  }
+}
+
+/* 📗 Tablets (min-width: 992px) */
+@media (min-width: 992px) {
+  .navmenu a,
+  .navmenu a:focus {
+    max-width: 56px;
+  }
+
+  .navmenu a span,
+  .navmenu a:focus span {
+    display: none;
+  }
+  .footer {
+    padding: 30px 0;
+
+    h3 {
+      font-size: 28px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+
+    .social-links {
+      gap: 6px;
+
+      a {
+        width: 34px;
+        height: 34px;
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+/* 📘 Tablets & small screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 32px;
+  }
+  .hero p {
+    font-size: 20px;
+  }
+  [data-aos-delay] {
+    transition-delay: 0 !important;
+  }
+  .portfolio-details {
+    .portfolio-info,
+    .portfolio-description {
+      margin-top: 20px;
+    }
+
+    .portfolio-description .testimonial-item {
+      padding: 20px;
+    }
+
+    .portfolio-info h3 {
+      font-size: 20px;
+    }
+
+    .portfolio-description h2 {
+      font-size: 22px;
+    }
+  }
+  .footer {
+    h3 {
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 13px;
+      margin: 0 0 20px 0;
+    }
+
+    .social-links {
+      flex-wrap: wrap;
+      gap: 8px;
+
+      a {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+      }
+    }
+
+    .copyright {
+      font-size: 13px;
+      padding-top: 20px;
+    }
+
+    .credits {
+      font-size: 12px;
+    }
+  }
+}
+
+
+/* 📕 Mobile devices (max-width: 575px) */
+@media (max-width: 575px) {
+  /* Portfolio filters */
+  .portfolio .portfolio-filters li {
+    font-size: 14px;
+    margin: 0 0 10px 0;
+  }
+
+  /* Hide arrows in portfolio details */
+  .portfolio-details .swiper-button-prev,
+  .portfolio-details .swiper-button-next {
+    display: none;
+  }
+
+  .footer {
+    padding: 25px 0;
+
+    h3 {
+      font-size: 20px;
+    }
+
+    p {
+      font-size: 13px;
+      margin: 0 0 20px 0;
+      line-height: 1.5;
+    }
+
+    .social-links {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+
+      a {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+      }
+    }
+
+    .copyright {
+      font-size: 12px;
+      padding-top: 15px;
+      border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+    }
+
+    .credits {
+      font-size: 11px;
+      margin-top: 6px;
+      opacity: 0.8;
+    }
+  }
+}

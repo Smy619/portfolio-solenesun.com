@@ -1,0 +1,109 @@
+/* =========================================================
+   🎨 Portfolio Section
+   Author: Ting Sun
+   Project: MyResume (React + Vite)
+   Description: Responsive portfolio gallery with filter tabs and hover overlay
+   ========================================================= */
+
+@use './variables';
+
+/* ----------------------------
+   Portfolio Section
+---------------------------- */
+.portfolio {
+  /* ---------- Filters ---------- */
+  .portfolio-filters {
+    padding: 0;
+    margin: 0 auto 20px auto;
+    list-style: none;
+    text-align: center;
+
+    li {
+      cursor: pointer;
+      display: inline-block;
+      padding: 8px 20px 10px 20px;
+      margin: 0 5px;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1;
+      border-radius: 50px;
+      font-family: var(--heading-font);
+      transition: all 0.3s ease-in-out;
+      background-color: color-mix(in srgb, var(--default-color), transparent 95%);
+
+      &:hover,
+      &.filter-active {
+        color: var(--contrast-color);
+        background-color: var(--accent-color);
+      }
+    }
+  }
+
+  /* ---------- Portfolio Item ---------- */
+  .portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .portfolio-info {
+      opacity: 0;
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      bottom: -100%;
+      z-index: 3;
+      transition: all 0.5s ease-in-out;
+      background: color-mix(in srgb, var(--background-color), transparent 10%);
+      padding: 15px;
+      border-radius: 6px;
+
+      h4 {
+        font-size: 18px;
+        font-weight: 600;
+        padding-right: 50px;
+        color: var(--heading-color);
+      }
+
+      p {
+        color: color-mix(in srgb, var(--default-color), transparent 30%);
+        font-size: 14px;
+        margin: 0;
+        padding-right: 50px;
+      }
+
+      /* ---------- Hover buttons ---------- */
+      .preview-link,
+      .details-link {
+        position: absolute;
+        right: 50px;
+        top: calc(50% - 14px);
+        font-size: 24px;
+        color: color-mix(in srgb, var(--default-color), transparent 30%);
+        transition: 0.3s ease;
+        line-height: 0;
+
+        &:hover {
+          color: var(--accent-color);
+        }
+      }
+
+      .details-link {
+        right: 14px;
+        font-size: 28px;
+      }
+    }
+
+    /* ---------- Hover reveal animation ---------- */
+    &:hover .portfolio-info {
+      opacity: 1;
+      bottom: 0;
+    }
+  }
+}

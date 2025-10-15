@@ -1,0 +1,145 @@
+/* =========================================================
+   📞 Contact Section
+   Author: Ting Sun
+   Project: MyResume (React + Vite)
+   Description: Contact form and info section with responsive layout
+   ========================================================= */
+
+@use './variables';
+
+/* ----------------------------
+   Contact Section
+---------------------------- */
+.contact {
+  display: grid;
+  gap: 2rem;
+  align-items: flex-start;
+
+  /* ---------- Info Items ---------- */
+  .info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+
+    i {
+      color: var(--accent-color);
+      background: color-mix(in srgb, var(--accent-color), transparent 92%);
+      font-size: 20px;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      margin-right: 15px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    h3 {
+      padding: 0;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 5px;
+      color: var(--heading-color);
+    }
+
+    p {
+      padding: 0;
+      margin: 0;
+      font-size: 14px;
+      color: color-mix(in srgb, var(--default-color), transparent 20%);
+    }
+
+    &:hover i {
+      background: var(--accent-color);
+      color: var(--contrast-color);
+    }
+
+    & + .info-item {
+      margin-top: 40px;
+    }
+  }
+
+  /* ---------- Email Form ---------- */
+  .php-email-form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      font-size: 14px;
+      padding: 10px 15px;
+      border-radius: 6px;
+      border: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
+      color: var(--default-color);
+      background-color: color-mix(in srgb, var(--background-color), transparent 50%);
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--accent-color);
+      box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent-color), transparent 70%);
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: color-mix(in srgb, var(--default-color), transparent 70%);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 140px;
+    }
+
+    /* ---------- Submit Button ---------- */
+    button[type="submit"] {
+      color: var(--contrast-color);
+      background: var(--accent-color);
+      border: 0;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      align-self: flex-start;
+      transition: all 0.4s ease;
+
+      &:hover {
+        background: color-mix(in srgb, var(--accent-color), transparent 25%);
+        transform: translateY(-2px);
+      }
+    }
+
+    /* ---------- Status Messages ---------- */
+    .loading,
+    .error-message,
+    .sent-message {
+      display: none;
+      padding: 15px;
+      font-weight: 600;
+      border-radius: 6px;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .loading {
+      background: var(--surface-color);
+      color: var(--default-color);
+    }
+
+    .error-message {
+      background: #df1529;
+      color: #fff;
+    }
+
+    .sent-message {
+      background: #059652;
+      color: #fff;
+    }
+  }
+}

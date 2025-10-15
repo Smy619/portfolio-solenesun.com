@@ -1,0 +1,86 @@
+/* =========================================================
+   🌅 Hero Section
+   Author: Ting Sun
+   Project: MyResume (React + Vite)
+   Description: Fullscreen hero banner with background image, title, and social links.
+   ========================================================= */
+
+@use './variables';
+
+/* ----------------------------
+   Hero Section
+---------------------------- */
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  padding: 80px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Background image */
+  img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  /* Overlay filter */
+  &::before {
+    content: "";
+    background: color-mix(in srgb, var(--background-color), transparent 30%);
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+  }
+
+  /* Content container */
+  .container {
+    position: relative;
+    z-index: 3;
+
+    h2 {
+      margin: 0;
+      font-size: 64px;
+      font-weight: 700;
+      color: var(--heading-color);
+    }
+
+    p {
+      margin: 5px 0 0 0;
+      font-size: 26px;
+      color: var(--default-color);
+
+      span {
+        letter-spacing: 1px;
+        border-bottom: 2px solid var(--accent-color);
+      }
+    }
+
+    /* Social links */
+    .social-links {
+      margin-top: 25px;
+
+      a {
+        font-size: 20px;
+        display: inline-block;
+        color: color-mix(in srgb, var(--default-color), transparent 30%);
+        line-height: 1;
+        margin-right: 20px;
+        transition: 0.3s;
+
+        &:hover {
+          color: var(--accent-color);
+        }
+      }
+    }
+  }
+}
+
+
+

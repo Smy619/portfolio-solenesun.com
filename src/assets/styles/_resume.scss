@@ -1,0 +1,80 @@
+/* =========================================================
+   📘 Resume Section
+   Author: Ting Sun
+   Project: MyResume (React + Vite)
+   Description: Timeline-style resume section (Education + Experience)
+   ========================================================= */
+
+@use './variables';
+
+/* ----------------------------
+   Resume Section
+---------------------------- */
+.resume {
+  .resume-title {
+    color: var(--heading-color);
+    font-size: 26px;
+    font-weight: 700;
+    margin: 20px 0;
+  }
+
+  /* Each item in the timeline */
+  .resume-item {
+    position: relative;
+    padding: 0 0 20px 20px;
+    margin-top: -2px;
+    border-left: 2px solid var(--accent-color);
+    transition: all 0.3s ease;
+
+    /* Timeline bullet */
+    &::before {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      left: -9px;
+      top: 0;
+      background: var(--background-color);
+      border: 2px solid var(--accent-color);
+    }
+
+    &:hover {
+    transform: translateX(5px);
+    border-left-color: color-mix(in srgb, var(--accent-color), transparent 30%);
+  }
+
+    h4 {
+      line-height: 18px;
+      font-size: 18px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: color-mix(in srgb, var(--default-color), transparent 20%);
+      margin-bottom: 10px;
+    }
+
+    h5 {
+      font-size: 16px;
+      padding: 5px 15px;
+      display: inline-block;
+      font-weight: 600;
+      margin-bottom: 10px;
+      background: color-mix(in srgb, var(--accent-color), transparent 90%);
+      border-radius: 4px;
+    }
+
+    ul {
+      padding-left: 20px;
+
+      li {
+        padding-bottom: 10px;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+}

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import "../assets/css/main.css";
+import "../assets/styles/_layout.scss";
 
 function Header() {
   const [active, setActive] = useState("#hero");

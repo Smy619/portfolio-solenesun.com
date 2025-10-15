@@ -1,0 +1,79 @@
+/* =========================================================
+   ✉️ Contact Form Messages
+   Author: Ting Sun
+   Project: MyResume (React + Vite)
+   Description: Status message styles for loading, error, and success states.
+   ========================================================= */
+
+@use './variables';
+
+/* ----------------------------
+   Contact Form (React version)
+---------------------------- */
+.contact-form {
+  // -------- Base Message Styles --------
+  .loading,
+  .error-message,
+  .sent-message {
+    display: none;
+    padding: 15px;
+    font-weight: 600;
+    border-radius: 6px;
+    text-align: center;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+  }
+
+  // -------- Loading State --------
+  .loading {
+    background: var(--surface-color);
+    color: var(--default-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      border: 3px solid var(--accent-color);
+      border-top-color: var(--surface-color);
+      animation: contact-form-loading 1s linear infinite;
+    }
+  }
+
+  // -------- Error State --------
+  .error-message {
+    background: #df1529;
+    color: #fff;
+    text-align: left;
+  }
+
+  // -------- Success State --------
+  .sent-message {
+    background: #059652;
+    color: #fff;
+  }
+
+  // -------- Visible State Modifier --------
+  &.is-loading .loading,
+  &.is-error .error-message,
+  &.is-sent .sent-message {
+    display: block;
+  }
+}
+
+/* ----------------------------
+   Loading Animation
+---------------------------- */
+@keyframes contact-form-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

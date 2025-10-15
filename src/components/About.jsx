@@ -1,18 +1,8 @@
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { useEffect } from "react";
 import profileImg from "../assets/img/profile-img.jpg";
-import "../assets/css/main.css";
+import "../assets/styles/_about.scss";
 
 function About() {
-
-  useEffect(() => {
-    AOS.init({
-      duration: 1000, once: true
-    })
-  }, [])
-   
-  return (
+ return (
     <section id="about" className="about section light-background">
       <div className="container" data-aos="fade-up">
         <div className="section-title">
@@ -24,23 +14,22 @@ function About() {
           </p>
         </div>
 
-
         <div className="row gy-4">
           <div className="col-lg-4" data-aos="fade-right" data-aos-delay="100">
-          <img 
-            src={profileImg}
-            className='img-fluid rounded'
-            alt="Profile"
-          />
+            <img src={profileImg} className="img-fluid rounded" alt="Profile" />
           </div>
 
-          <div className="col-lg-8 content" data-aos="fade-left" data-aos-delay="200">
+          <div
+            className="col-lg-8 content"
+            data-aos="fade-left"
+            data-aos-delay="200"
+          >
             <h2>Frontend Developer &amp; Web Integrator.</h2>
             <p className="text-muted">
-            Based in France • Building digital experiences with heart.
+              Based in France • Building digital experiences with heart.
             </p>
             <p className="fst-italic">
-               Turning design ideas into fast, responsive and elegant websites.
+              Turning design ideas into fast, responsive and elegant websites.
             </p>
 
             <div className="row">
@@ -48,11 +37,8 @@ function About() {
                 <ul>
                   <li>
                     <i className="bi bi-chevron-right"></i>
-                    <strong>Birthday:</strong> <span>19 June 1985</span>
-                  </li>
-                  <li>
-                    <i className="bi bi-chevron-right"></i>
-                    <strong>Website:</strong> <span>www.portfolio-solensun.com</span>
+                    <strong>Website:</strong>{" "}
+                    <span>www.portfolio-solensun.com</span>
                   </li>
                   <li>
                     <i className="bi bi-chevron-right"></i>
@@ -69,11 +55,8 @@ function About() {
                 <ul>
                   <li>
                     <i className="bi bi-chevron-right"></i>
-                    <strong>Age:</strong> <span>40</span>
-                  </li>
-                  <li>
-                    <i className="bi bi-chevron-right"></i>
-                    <strong>Degree:</strong> <span>Bac+2 / Web Integration</span>
+                    <strong>Degree:</strong>{" "}
+                    <span>Bac+2 / Web Integration</span>
                   </li>
                   <li>
                     <i className="bi bi-chevron-right"></i>
@@ -88,11 +71,12 @@ function About() {
             </div>
 
             <p>
-              I’ve been living in France for over 18 years, continuously learning
-              and creating. My goal is to build websites that blend aesthetic
-              beauty with strong functionality — a balance between logic and art.
+              I’ve been living in France for over 18 years, continuously
+              learning and creating. My goal is to build websites that blend
+              aesthetic beauty with strong functionality — a balance between
+              logic and art.
             </p>
-            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -5,7 +5,7 @@ import heroImg from "../assets/img/hero-bg.jpg";
 
 import 'aos/dist/aos.css';
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../assets/css/main.css";
+import "../assets/styles/_hero.scss";
 
 function Hero() {
   const typedElement = useRef(null);
@@ -26,10 +26,11 @@ function Hero() {
   }, []);
 
   return (
-    <section id="hero" className="hero d-flex align-items-center  justify-content-center">
-      <img src={heroImg} alt="Background" data-aos="fade-in" />
+    <section id="hero" className="hero
+    ">
+       <img src={heroImg} alt="Background" data-aos="fade-in" />
 
-      <div className="container text-center" data-aos="fade-up" data-aos-delay="100">
+       <div className="container" data-aos="fade-up" data-aos-delay="100">
         <h2 className="mb-2">TING SUN</h2>
         <p>
           I'm a <span ref={typedElement}></span>
@@ -48,7 +49,7 @@ function Hero() {
             <i className="bi bi-envelope"></i>
           </a>
          </div>
-      </div>
+        </div>
     </section>
   );
 }
