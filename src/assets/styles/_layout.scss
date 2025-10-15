@@ -57,55 +57,58 @@
 .navmenu {
   padding: 0;
   z-index: 9997;
-
-  ul {
-    list-style: none;
-    padding: 0 0 20px 0;
-    margin: 0;
-    width: 80px;
-  }
-
-  a,
-  a:focus {
-    color: var(--nav-color);
-    font-family: var(--nav-font);
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-    padding: 10px;
-    margin-bottom: 8px;
-    font-size: 20px;
-    border-radius: 50%;
-    background: color-mix(in srgb, var(--default-color), transparent 92%);
-    width: 56px;
-    height: 56px;
-    transition:
-      background-color 0.4s ease,
-      color 0.4s ease,
-      transform 0.25s ease;;
-
-    i {
-      font-size: 22px;
-      transition: transform 0.3s ease, color 0.3s ease; 
-    }
-    span {
-      display: none;
-    }
-  }
-
-  a:hover,
-  .active,
-  .active:focus,
-  li:hover > a {
-    color: var(--contrast-color);
-    background: var(--nav-hover-color);
-    transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
-    i {
-      transform: scale(1.15);
-      transform: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  }
 }
+
+.navmenu ul {
+  list-style: none;
+  padding: 0 0 20px 0;
+  margin: 0;
+  width: 140px;
+}
+
+.navmenu a,
+.navmenu a:focus {
+  color: var(--nav-color);
+  font-family: var(--nav-font);
+  display: flex;
+  align-items: center;
+  padding: 10px 18px;
+  margin-bottom: 8px;
+  font-size: 15px;
+  border-radius: 50px;
+  background: color-mix(in srgb, var(--default-color), transparent 92%);
+  height: 56px;
+  width: 100%;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.navmenu a i,
+.navmenu a:focus i {
+  font-size: 20px;
+}
+
+.navmenu a span,
+.navmenu a:focus span {
+  padding: 0 5px 0 7px;
+}
+.navmenu a:hover,
+.navmenu .active,
+.navmenu .active:focus,
+.navmenu li:hover>a {
+  color: var(--contrast-color);
+  background: var(--nav-hover-color);
+}
+
+.navmenu a:hover,
+.navmenu li:hover>a {
+  max-width: 100%;
+  color: var(--contrast-color);
+}
+
+.navmenu a:hover span,
+.navmenu li:hover>a span {
+  display: block;
 }
 
 /* ----------------------------
