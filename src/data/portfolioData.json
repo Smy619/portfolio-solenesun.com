@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "title": "Nina Carducci – SEO Optimization",
+    "category": "Formation",
+    "image": "assets/img/masonry-portfolio/masonry-portfolio-1.jpg",
+    "description": "Website optimized for SEO, accessibility, and performance using Lighthouse, WAVE, and structured data.",
+    "tech": ["HTML", "CSS", "SEO", "Lighthouse"],
+    "status": "Completed",
+    "year": 2024
+  },
+  {
+    "id": 2,
+    "title": "ArgentBank – React Banking App",
+    "category": "Formation",
+    "image": "assets/img/masonry-portfolio/masonry-portfolio-2.jpg",
+    "description": "Full-stack banking web app with user authentication, transactions, and Redux state management.",
+    "tech": ["React", "Redux", "Node.js", "MongoDB"],
+    "status": "Completed",
+    "year": 2025
+  },
+  {
+    "id": 3,
+    "title": "Portfolio – Projet 12",
+    "category": "Formation",
+    "image": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
+    "description": "Modern portfolio website built with React + Vite, including animations, routing, and responsive design.",
+    "tech": ["React", "Vite", "AOS", "SCSS"],
+    "status": "In Progress",
+    "year": 2025
+  },
+  {
+    "id": 4,
+    "title": "MonResto WordPress Theme",
+    "category": "Personal",
+    "image": "assets/img/masonry-portfolio/masonry-portfolio-4.jpg",
+    "description": "Commercial WordPress restaurant theme with WooCommerce and custom animations.",
+    "tech": ["WordPress", "SCSS", "JavaScript"],
+    "status": "Completed",
+    "year": 2025
+  },
+  {
+    "id": 5,
+    "title": "AI Job Hunter",
+    "category": "Personal",
+    "image": "assets/img/masonry-portfolio/masonry-portfolio-5.jpg",
+    "description": "AI-powered tool that automatically sends tailored CVs to remote job offers.",
+    "tech": ["React", "OpenAI API", "Automation"],
+    "status": "In Progress",
+    "year": 2025
+  },
+  {
+    "id": 6,
+    "title": "AI Theme2WP",
+    "category": "Personal",
+    "image": "assets/img/masonry-portfolio/masonry-portfolio-6.jpg",
+    "description": "Tool that converts static HTML templates into WordPress themes using AI assistance.",
+    "tech": ["Node.js", "React", "OpenAI API"],
+    "status": "In Progress",
+    "year": 2025
+  },
+  {
+    "id": 7,
+    "title": "AI Tarot Project",
+    "category": "Personal",
+    "image": "assets/img/masonry-portfolio/masonry-portfolio-7.jpg",
+    "description": "Interactive Tarot reading web app powered by AI, combining psychology and symbolic storytelling.",
+    "tech": ["React", "Node.js", "AI API"],
+    "status": "In Progress",
+    "year": 2025
+  },
+  {
+    "id": 8,
+    "title": "AI Email Assistant",
+    "category": "Concept",
+    "image": "assets/img/masonry-portfolio/masonry-portfolio-8.jpg",
+    "description": "Smart email management assistant that reads, summarizes, and replies automatically using AI.",
+    "tech": ["Python", "OpenAI", "IMAP/SMTP"],
+    "status": "Concept Stage",
+    "year": 2025
+  }
+]
