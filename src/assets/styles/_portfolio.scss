@@ -107,3 +107,10 @@
     }
   }
 }
+  .glightbox-container {
+  z-index: 9999999 !important;
+}
+
+.glightbox-clean .gdesc-inner {
+  background-color: #fff;
+}

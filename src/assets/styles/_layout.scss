@@ -25,7 +25,7 @@
   &.header-show {
     left: 0;
   }
-
+}
   /* ---------- Toggle Button ---------- */
   .header-toggle {
     color: var(--contrast-color);
@@ -49,7 +49,7 @@
       background-color: color-mix(in srgb, var(--accent-color), transparent 10%);
     }
   }
-}
+
 
 /* ----------------------------
    Navmenu
@@ -149,7 +149,8 @@
       width: 36px;
       height: 36px;
       transition: 0.3s;
-
+      flex-direction: row;
+      
       &:hover {
         background: color-mix(in srgb, var(--accent-color), transparent 20%);
         text-decoration: none;

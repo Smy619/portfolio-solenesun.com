@@ -23,6 +23,18 @@ function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      const isClickInsideHeader = e.target.closest(".header");
+      const isClickOnToggle = e.target.closest(".header-toggle");
+      if (!isClickInsideHeader && !isClickOnToggle && showMenu) {
+        setShowMenu(false);
+      }
+    };
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, [showMenu]);
+
   const navItems = [
     { href: "#hero", label: "Home", icon: "bi-house" },
     { href: "#about", label: "About", icon: "bi-person" },

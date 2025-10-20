@@ -49,7 +49,9 @@
     }
 
     .social-links {
-      gap: 6px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
 
       a {
         width: 34px;
@@ -100,8 +102,10 @@
     }
 
     .social-links {
-      flex-wrap: wrap;
-      gap: 8px;
+      justify-content: center;
+      flex-direction: row;
+      display: flex;
+    
 
       a {
         width: 32px;
