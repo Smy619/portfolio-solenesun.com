@@ -1,7 +1,7 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "../assets/styles/_skills.scss";
-import "../assets/styles/_resume.scss";
+import "../assets/styles/_timeline.scss"; // ⚠️ 原 _resume.scss 改为 _timeline.scss
 import { useEffect } from "react";
 
 function SkillsAndResume() {
@@ -11,10 +11,10 @@ function SkillsAndResume() {
 
   return (
     <>
-      
-      <section id="skills" className="skills section">
+      {/* -------- Skills Section -------- */}
+      <section id="expertise" className="expertise-section section-block">
         <div className="container" data-aos="fade-up">
-          <div className="section-title">
+          <div className="block-title">
             <h2>Skills</h2>
             <p>
               Here are the main technologies and tools I use to build modern,
@@ -22,15 +22,18 @@ function SkillsAndResume() {
             </p>
           </div>
 
-          
-          <div className="row skills-content">
+          <div className="row expertise-content">
             <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
               <div className="progress">
                 <span className="skill">
                   HTML <i className="val">100%</i>
                 </span>
                 <div className="progress-bar-wrap">
-                  <div className="progress-bar" style={{ width: "100%" }} aria-label="Html skill 90%"></div>
+                  <div
+                    className="progress-bar"
+                    style={{ width: "100%" }}
+                    aria-label="Html skill 90%"
+                  ></div>
                 </div>
               </div>
 
@@ -39,7 +42,11 @@ function SkillsAndResume() {
                   CSS / SCSS <i className="val">95%</i>
                 </span>
                 <div className="progress-bar-wrap">
-                  <div className="progress-bar" style={{ width: "95%" }} aria-label="CSS skill 90%"></div>
+                  <div
+                    className="progress-bar"
+                    style={{ width: "95%" }}
+                    aria-label="CSS skill 90%"
+                  ></div>
                 </div>
               </div>
 
@@ -48,7 +55,11 @@ function SkillsAndResume() {
                   JavaScript <i className="val">90%</i>
                 </span>
                 <div className="progress-bar-wrap">
-                  <div className="progress-bar" style={{ width: "90%" }} aria-label="JavaScript skill 90%"></div>
+                  <div
+                    className="progress-bar"
+                    style={{ width: "90%" }}
+                    aria-label="JavaScript skill 90%"
+                  ></div>
                 </div>
               </div>
             </div>
@@ -59,7 +70,11 @@ function SkillsAndResume() {
                   React.js <i className="val">85%</i>
                 </span>
                 <div className="progress-bar-wrap">
-                  <div className="progress-bar" style={{ width: "85%" }} aria-label="React skill 90%"></div>
+                  <div
+                    className="progress-bar"
+                    style={{ width: "85%" }}
+                    aria-label="React skill 90%"
+                  ></div>
                 </div>
               </div>
 
@@ -68,7 +83,11 @@ function SkillsAndResume() {
                   WordPress <i className="val">90%</i>
                 </span>
                 <div className="progress-bar-wrap">
-                  <div className="progress-bar" style={{ width: "90%" }} aria-label="WordPress skill 90%"></div>
+                  <div
+                    className="progress-bar"
+                    style={{ width: "90%" }}
+                    aria-label="WordPress skill 90%"
+                  ></div>
                 </div>
               </div>
 
@@ -77,7 +96,11 @@ function SkillsAndResume() {
                   SEO / Performance <i className="val">85%</i>
                 </span>
                 <div className="progress-bar-wrap">
-                  <div className="progress-bar" style={{ width: "85%" }} aria-label="SEO skill 90%"></div>
+                  <div
+                    className="progress-bar"
+                    style={{ width: "85%" }}
+                    aria-label="SEO skill 90%"
+                  ></div>
                 </div>
               </div>
             </div>
@@ -85,10 +108,13 @@ function SkillsAndResume() {
         </div>
       </section>
 
-     
-      <section id="resume" className="resume section light-background">
+      {/* -------- Resume Section -------- */}
+      <section
+        id="timeline"
+        className="timeline-section section-block bg-soft"
+      >
         <div className="container" data-aos="fade-up">
-          <div className="section-title">
+          <div className="block-title">
             <h2>Resume</h2>
             <p>
               My learning path and professional experience — from web
@@ -98,9 +124,9 @@ function SkillsAndResume() {
 
           <div className="row">
             <div className="col-lg-6" data-aos="fade-up">
-              <h3 className="resume-title">Education</h3>
+              <h3 className="timeline-title">Education</h3>
 
-              <div className="resume-item">
+              <div className="timeline-item">
                 <h4>Web Integrator - OpenClassrooms</h4>
                 <h5>2024 - 2025</h5>
                 <p>
@@ -112,7 +138,7 @@ function SkillsAndResume() {
                 </p>
               </div>
 
-              <div className="resume-item">
+              <div className="timeline-item">
                 <h4>React Application Developer (Bac+3)</h4>
                 <h5>2025 - 2026</h5>
                 <p>
@@ -126,9 +152,9 @@ function SkillsAndResume() {
             </div>
 
             <div className="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-              <h3 className="resume-title">Experience</h3>
+              <h3 className="timeline-title">Experience</h3>
 
-              <div className="resume-item">
+              <div className="timeline-item">
                 <h4>Frontend Developer - Freelance</h4>
                 <h5>2024 - Present</h5>
                 <p>
@@ -150,7 +176,7 @@ function SkillsAndResume() {
                 </ul>
               </div>
 
-              <div className="resume-item">
+              <div className="timeline-item">
                 <h4>Project-Based Developer — Training Projects</h4>
                 <h5>2024 - 2025</h5>
                 <p>

@@ -25,8 +25,8 @@ function Header() {
 
   useEffect(() => {
     const handleClickOutside = (e) => {
-      const isClickInsideHeader = e.target.closest(".header");
-      const isClickOnToggle = e.target.closest(".header-toggle");
+      const isClickInsideHeader = e.target.closest(".site-header");
+      const isClickOnToggle = e.target.closest(".nav-toggle");
       if (!isClickInsideHeader && !isClickOnToggle && showMenu) {
         setShowMenu(false);
       }
@@ -37,32 +37,37 @@ function Header() {
 
   const navItems = [
     { href: "#hero", label: "Home", icon: "bi-house" },
-    { href: "#about", label: "About", icon: "bi-person" },
-    { href: "#resume", label: "Resume", icon: "bi-briefcase" },
-    { href: "#portfolio", label: "Portfolio", icon: "bi-grid" },
+    { href: "#profile", label: "About", icon: "bi-person" },
+    { href: "#stats", label: "Stats", icon: "bi-graph-up-arrow" },
+    { href: "#expertise", label: "Skills", icon: "bi-cpu" },
+    { href: "#timeline", label: "Resume", icon: "bi-briefcase" },
+    { href: "#projects", label: "Portfolio", icon: "bi-grid" },
     { href: "#contact", label: "Contact", icon: "bi-envelope" },
   ];
 
   return (
     <>
       <i
-        className="bi bi-list header-toggle d-xl-none"
+        className="bi bi-list nav-toggle d-xl-none"
         onClick={() => setShowMenu((prev) => !prev)}
       ></i>
 
       <header
-        id="header"
-        className={`header d-flex flex-column justify-content-center ${
-          showMenu ? "header-show" : ""
+        id="site-header"
+        className={`site-header d-flex flex-column justify-content-center ${
+          showMenu ? "nav-show" : ""
         }`}
       >
-        <nav id="navmenu" className="navmenu">
+        <nav id="main-nav" className="main-nav">
           <ul>
             {navItems.map(({ href, icon, label }) => (
               <li key={href}>
                 <a
                   href={href}
-                  onClick={() => setActive(href)}
+                  onClick={() => {
+                    setActive(href);
+                    setShowMenu(false);
+                  }}
                   className={`nav-link scrollto ${
                     active === href ? "active" : ""
                   }`}

@@ -7,7 +7,7 @@ import About from "./components/About";
 import Stats from "./components/Stats";
 import SkillsAndResume from "./components/SkillsAndResume";
 import Portfolio from "./components/Portfolio";
-import PortfolioDetails from "./components/PortfolieDetails";
+import PortfolioDetails from "./components/PortfolioDetails";
 import Footer from "./components/Footer";
 import ScrollTop from "./components/ScrollTop";
 import AOS from "aos";

@@ -6,19 +6,19 @@
 
 /* 🖥️ Large screens (min-width: 1200px and max-width: 1600px) */
 @media (min-width: 1200px) and (max-width: 1600px) {
-  .header~main {
+  .site-header ~main {
     margin-left: 160px;
   }
 
-  .header~main .hero {
+  .site-header ~main .hero {
     margin-left: -160px;
-    width: 100vw;
+    width:100vw;
   }
 }
 
 /* 💻 Desktops & laptops (max-width: 1199px) */
 @media (max-width: 1199px) {
-  .header {
+  .site-header {
     background-color: var(--background-color);
     border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
     width: 300px;
@@ -26,15 +26,16 @@
   }
 }
 
+
 /* 📗 Tablets (min-width: 992px) */
 @media (min-width: 992px) {
-  .navmenu a,
-  .navmenu a:focus {
+  .main-nav a,
+  .main-nav a:focus {
     max-width: 56px;
   }
 
-  .navmenu a span,
-  .navmenu a:focus span {
+  .main-nav a span,
+  .main-nav a:focus span {
     display: none;
   }
   .footer {
@@ -73,6 +74,7 @@
   [data-aos-delay] {
     transition-delay: 0 !important;
   }
+  
   .portfolio-details {
     .portfolio-info,
     .portfolio-description {
@@ -128,6 +130,7 @@
 
 /* 📕 Mobile devices (max-width: 575px) */
 @media (max-width: 575px) {
+
   /* Portfolio filters */
   .portfolio .portfolio-filters li {
     font-size: 14px;

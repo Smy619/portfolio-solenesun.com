@@ -8,11 +8,11 @@
 @use './variables';
 
 /* ----------------------------
-   Portfolio Section
+   Projects Gallery Section
 ---------------------------- */
-.portfolio {
+.projects-gallery {
   /* ---------- Filters ---------- */
-  .portfolio-filters {
+  .gallery-filters {
     padding: 0;
     margin: 0 auto 20px auto;
     list-style: none;
@@ -32,15 +32,15 @@
       background-color: color-mix(in srgb, var(--default-color), transparent 95%);
 
       &:hover,
-      &.filter-active {
+      &.filter-selected {
         color: var(--contrast-color);
         background-color: var(--accent-color);
       }
     }
   }
 
-  /* ---------- Portfolio Item ---------- */
-  .portfolio-item {
+  /* ---------- Project Item ---------- */
+  .project-card {
     position: relative;
     overflow: hidden;
     border-radius: 6px;
@@ -52,7 +52,7 @@
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
     }
 
-    .portfolio-info {
+    .project-info {
       opacity: 0;
       position: absolute;
       left: 12px;
@@ -79,7 +79,7 @@
       }
 
       /* ---------- Hover buttons ---------- */
-      .preview-link,
+      .zoom-link,
       .details-link {
         position: absolute;
         right: 50px;
@@ -101,16 +101,25 @@
     }
 
     /* ---------- Hover reveal animation ---------- */
-    &:hover .portfolio-info {
+    &:hover .project-info {
       opacity: 1;
       bottom: 0;
     }
   }
 }
-  .glightbox-container {
-  z-index: 9999999 !important;
-}
 
+/* ---------- Lightbox Fix ---------- */
+.glightbox-container {
+  z-index: 9999999 !important;
+   pointer-events: auto !important;
+
+}
 .glightbox-clean .gdesc-inner {
   background-color: #fff;
+}
+
+
+.goverlay {
+  pointer-events: auto !important;
+  cursor: zoom-out;
 }

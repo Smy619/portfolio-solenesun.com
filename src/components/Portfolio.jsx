@@ -3,9 +3,9 @@ import GLightbox from "glightbox";
 import "glightbox/dist/css/glightbox.min.css";
 import Isotope from "isotope-layout";
 import imagesLoaded from "imagesloaded";
-import "../assets/styles/_portfolio.scss";
+import "../assets/styles/_projects.scss";
 
-function Portfolio() {
+function Projects() {
   const [portfolioData, setPortfolioData] = useState([]);
 
   // Fetch portfolio data from external JSON file
@@ -20,34 +20,69 @@ function Portfolio() {
 
   // Initialize GLightbox one time
   useEffect(() => {
-    GLightbox({
+    setTimeout(() => {
+      if (document.activeElement && document.activeElement.blur) {
+        document.activeElement.blur();
+      }
+    }, 100);
+
+    // 初始化 GLightbox
+    const lightbox = GLightbox({
       selector: ".glightbox",
+      touchNavigation: true,
+      loop: true,
+      keyboardNavigation: true,
+      autofocusVideos: false,
+      closeOnOutsideClick: true, //
+      openEffect: "zoom",
+      closeEffect: "fade",
+      moreText: "",
+      onOpen: () => {
+        setTimeout(() => {
+          if (document.activeElement && document.activeElement.blur) {
+            document.activeElement.blur();
+          }
+        }, 50);
+      },
     });
-  }, []);
+
+    const handleFocusReset = () => {
+      const active = document.activeElement;
+      if (active && active.blur) active.blur();
+    };
+
+    document.addEventListener("focusin", handleFocusReset);
+
+    return () => {
+      document.removeEventListener("focusin", handleFocusReset);
+      lightbox.destroy();
+    };
+  }, [portfolioData]);
 
   // Initialize Isotope and filtering
   useEffect(() => {
     if (!portfolioData.length) return; // Wait until portfolio data is loaded
 
     let isotopeInstance;
-    const isotopeContainer = document.querySelector(".isotope-container");
-    const filterButtons = document.querySelectorAll(".portfolio-filters li");
+    const isotopeContainer = document.querySelector(".gallery-container");
+    const filterButtons = document.querySelectorAll(".gallery-filters li");
 
     imagesLoaded(isotopeContainer, () => {
       isotopeInstance = new Isotope(isotopeContainer, {
-        itemSelector: ".isotope-item",
+        itemSelector: ".gallery-item",
         layoutMode: "masonry",
       });
       isotopeInstance.arrange({ transitionDuration: "0.4s" });
     });
+
     // Filter button click
     const handleFilterClick = function (event) {
       document
-        .querySelector(".portfolio-filters .filter-active")
-        ?.classList.remove("filter-active");
+        .querySelector(".gallery-filters .filter-selected")
+        ?.classList.remove("filter-selected");
 
       const target = event.currentTarget;
-      target.classList.add("filter-active");
+      target.classList.add("filter-selected");
 
       const filterValue = target.getAttribute("data-filter");
       isotopeInstance.arrange({ filter: filterValue });
@@ -65,34 +100,32 @@ function Portfolio() {
     };
   }, [portfolioData]);
 
-  // Render Portfolio Section
+  // Render Projects Section
   return (
-    // Portfolio Section
-    <section id="portfolio" className="portfolio section">
-      {/*Section Title */}
-      <div className="container section-title" data-aos="fade-up">
-        <h2>Portfolio</h2>
+    <section id="projects" className="projects-gallery section-block">
+      {/* Section Title */}
+      <div className="container block-title" data-aos="fade-up">
+        <h2>Projects</h2>
         <p>
-          Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex
-          aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos
-          quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
-          fugiat sit in iste officiis commodi quidem hic quas.
+          Explore a selection of my featured works — from professional training
+          projects to personal creative experiments.
         </p>
       </div>
 
       <div className="container">
         <div
-          className="isotope-layout"
+          className="gallery-layout"
           data-default-filter="*"
           data-layout="masonry"
           data-sort="original-order"
         >
+          {/* Filter Buttons */}
           <ul
-            className="portfolio-filters isotope-filters"
+            className="gallery-filters"
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            <li data-filter="*" className="filter-active">
+            <li data-filter="*" className="filter-selected">
               All
             </li>
             <li data-filter=".filter-formation">Formation</li>
@@ -100,26 +133,26 @@ function Portfolio() {
             <li data-filter=".filter-concept">Concept</li>
           </ul>
 
-          {/* -------------------- Portfolio Grid ----------------- */}
+          {/* -------------------- Projects Grid ----------------- */}
           <div
-            className="row gy-4 isotope-container"
+            className="row gy-4 gallery-container"
             data-aos="fade-up"
             data-aos-delay="200"
           >
             {portfolioData.length === 0 ? (
-              <p className="text-center text-muted">Loading portfolio...</p>
+              <p className="text-center text-muted">Loading projects...</p>
             ) : (
               portfolioData.map((item) => (
                 <div
                   key={item.id}
-                  className={`col-lg-4 col-md-6 portfolio-item isotope-item filter-${item.category.toLowerCase()}`}
+                  className={`col-lg-4 col-md-6 project-card gallery-item filter-${item.category.toLowerCase()}`}
                 >
                   <img
                     src={item.image}
                     className="img-fluid"
                     alt={item.title}
                   />
-                  <div className="portfolio-info">
+                  <div className="project-info">
                     <h4>{item.title}</h4>
                     <p>
                       {Array.isArray(item.tech)
@@ -143,7 +176,7 @@ function Portfolio() {
                     <a
                       href={item.image}
                       title={item.title}
-                      className="glightbox preview-link"
+                      className="glightbox zoom-link"
                     >
                       <i className="bi bi-zoom-in"></i>
                     </a>
@@ -162,11 +195,11 @@ function Portfolio() {
               ))
             )}
           </div>
-          {/* End Portfolio Grid */}
+          {/* End Projects Grid */}
         </div>
       </div>
     </section>
   );
 }
 
-export default Portfolio;
+export default Projects;

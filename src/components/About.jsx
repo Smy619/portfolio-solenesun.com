@@ -1,11 +1,12 @@
-import profileImg from "../assets/img/profile-img.jpg";
-import "../assets/styles/_about.scss";
+import "../assets/styles/_profile.scss";
 
 function About() {
- return (
-    <section id="about" className="about section light-background">
+  const profileImg = "/assets/img/profile-img.jpg";
+
+  return (
+    <section id="profile" className="profile-section section-block bg-soft">
       <div className="container" data-aos="fade-up">
-        <div className="section-title">
+        <div className="block-title">
           <h2>About</h2>
           <p>
             Passionate web developer based in France. I love building clean,
@@ -16,19 +17,23 @@ function About() {
 
         <div className="row gy-4">
           <div className="col-lg-4" data-aos="fade-right" data-aos-delay="100">
-            <img src={profileImg} className="img-fluid rounded" alt="Profile" />
+            <img
+              src={profileImg}
+              className="img-fluid rounded"
+              alt="Profile"
+            />
           </div>
 
           <div
-            className="col-lg-8 content"
+            className="col-lg-8 profile-content"
             data-aos="fade-left"
             data-aos-delay="200"
           >
             <h2>Frontend Developer &amp; Web Integrator.</h2>
-            <p className="text-muted">
+            <p className="text-secondary">
               Based in France • Building digital experiences with heart.
             </p>
-            <p className="fst-italic">
+            <p className="text-italic">
               Turning design ideas into fast, responsive and elegant websites.
             </p>
 
@@ -42,11 +47,13 @@ function About() {
                   </li>
                   <li>
                     <i className="bi bi-chevron-right"></i>
-                    <strong>Phone:</strong> <span>+33 6 01 22 84 47 </span>
+                    <strong>Phone:</strong>{" "}
+                    <span>+33 6 01 22 84 47 </span>
                   </li>
                   <li>
                     <i className="bi bi-chevron-right"></i>
-                    <strong>City:</strong> <span>La Roche sur yon, France</span>
+                    <strong>City:</strong>{" "}
+                    <span>La Roche-sur-Yon, France</span>
                   </li>
                 </ul>
               </div>
@@ -60,11 +67,13 @@ function About() {
                   </li>
                   <li>
                     <i className="bi bi-chevron-right"></i>
-                    <strong>Email:</strong> <span>contact@solenesun.com</span>
+                    <strong>Email:</strong>{" "}
+                    <span>contact@solenesun.com</span>
                   </li>
                   <li>
                     <i className="bi bi-chevron-right"></i>
-                    <strong>Freelance:</strong> <span>Available</span>
+                    <strong>Freelance:</strong>{" "}
+                    <span>Available</span>
                   </li>
                 </ul>
               </div>
