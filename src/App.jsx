@@ -6,8 +6,11 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Stats from "./components/Stats";
 import SkillsAndResume from "./components/SkillsAndResume";
+import Studio from "./components/Studio"
+import StudioDetails from "./components/StudioDetails";
 import Portfolio from "./components/Portfolio";
 import PortfolioDetails from "./components/PortfolioDetails";
+import Contact from "./components/Contact"
 import Footer from "./components/Footer";
 import NotFound from "./components/NotFound";
 import ScrollTop from "./components/ScrollTop";
@@ -37,10 +40,13 @@ function App() {
                 <About />
                 <Stats />
                 <SkillsAndResume />
+                <Studio />
                 <Portfolio />
+                <Contact />
               </>
             }
           />
+          <Route path="/studio-Details" element={<StudioDetails />} />
           <Route path="/portfolio-details/:id" element={<PortfolioDetails />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

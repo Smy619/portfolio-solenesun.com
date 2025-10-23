@@ -1,38 +1,50 @@
 [
     {
+      "id": 1,
+      "slug": "frontend",
       "icon": "bi bi-code-slash",
       "title": "Frontend Development",
       "description": "Responsive, animated websites built with React & SCSS.",
-      "link": "/services/frontend"
+      "price": null
     },
     {
+      "id": 2,
+      "slug": "design",
       "icon": "bi bi-brush",
       "title": "Web Design & Branding",
       "description": "Transforming ideas into beautiful digital experiences.",
-      "link": "/services/design"
+      "price": null
     },
     {
+      "id": 3,
+      "slug": "wordpress",
       "icon": "bi bi-wordpress",
       "title": "WordPress Themes",
       "description": "Custom themes and integrations built for performance.",
-      "link": "/services/wordpress"
+      "price": null
     },
     {
+      "id": 4,
+      "slug":"automation",
       "icon": "bi bi-lightning-charge",
       "title": "AI & Automation",
       "description": "Smart integrations to make your workflow efficient.",
-      "link": "/services/automation"
+      "price": null
     },
     {
+      "id": 5,
+      "slug":"seo",
       "icon": "bi bi-cloud-arrow-up",
       "title": "Deployment & SEO",
       "description": "Optimized hosting, SEO setup, and maintenance.",
-      "link": "/services/seo"
+      "price": null
     },
     {
+      "id": 6,
+      "slug":"consulting",
       "icon": "bi bi-chat-left-heart",
       "title": "Consulting",
       "description": "Personalized advice for building your digital identity.",
-      "link": "/services/consulting"
+      "price": null
     }
   ]

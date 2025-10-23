@@ -1,0 +1,147 @@
+/* =========================================================
+   🧭 Service Details Section
+   Author: Ting Sun
+   Project: MyResume (React + Vite)
+   Description: Detailed page for individual services with sidebar and CTA.
+   ========================================================= */
+
+@use './variables';
+
+/* ----------------------------
+   Service Details
+---------------------------- */
+.studio-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  margin-top: 40px;
+}
+
+/* ---------- Sidebar ---------- */
+.sidebar {
+  background: var(--surface-color);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+
+  h4 {
+    color: var(--heading-color);
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      padding: 10px 12px;
+      margin-bottom: 8px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+      color: color-mix(in srgb, var(--default-color), transparent 10%);
+
+      &:hover {
+        background-color: color-mix(in srgb, var(--accent-color), transparent 92%);
+        color: var(--accent-color);
+      }
+
+      i {
+        margin-right: 8px;
+      }
+    }
+  }
+
+  .download-catalog a {
+    display: block;
+    color: var(--default-color);
+    margin-top: 8px;
+    transition: 0.3s;
+    i {
+      color: var(--accent-color);
+      margin-right: 8px;
+    }
+    &:hover {
+      color: var(--accent-color);
+    }
+  }
+
+  .help-box {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+    border-radius: 8px;
+    padding: 25px 20px;
+    text-align: center;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+
+    .help-icon {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    a {
+      color: var(--contrast-color);
+      text-decoration: underline;
+    }
+  }
+}
+
+/* ---------- Right Side: Content ---------- */
+.services-content {
+  .service-box {
+    background: var(--surface-color);
+    border-radius: 8px;
+    padding: 25px 30px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 40px;
+    transition: 0.3s;
+
+    &:hover {
+      transform: translateY(-3px);
+    }
+
+    h3 {
+      color: var(--heading-color);
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .services-img {
+      margin-bottom: 20px;
+
+      img {
+        width: 100%;
+        border-radius: 8px;
+        object-fit: cover;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+
+      li {
+        display: flex;
+        align-items: center;
+        padding: 5px 0;
+        color: color-mix(in srgb, var(--default-color), transparent 10%);
+
+        i {
+          font-size: 18px;
+          margin-right: 8px;
+          color: var(--accent-color);
+        }
+      }
+    }
+
+    .price {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--accent-color);
+      margin: 10px 0;
+    }
+  }
+}
