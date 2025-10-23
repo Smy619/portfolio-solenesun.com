@@ -9,6 +9,7 @@ import SkillsAndResume from "./components/SkillsAndResume";
 import Portfolio from "./components/Portfolio";
 import PortfolioDetails from "./components/PortfolioDetails";
 import Footer from "./components/Footer";
+import NotFound from "./components/NotFound";
 import ScrollTop from "./components/ScrollTop";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -40,7 +41,8 @@ function App() {
               </>
             }
           />
-          <Route path="/portfolio/:id" element={<PortfolioDetails />} />
+          <Route path="/portfolio-details/:id" element={<PortfolioDetails />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />

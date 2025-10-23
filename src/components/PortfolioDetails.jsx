@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -7,12 +7,13 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import Footer from "./Footer";
+
 import "../assets/styles/_portfolio-details.scss";
 
 function PortfolioDetails() {
   const { id } = useParams();
-  const project = portfolioData.find((item) => item.id === Number(id));
+  const [project, setProject] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     AOS.init({
@@ -21,22 +22,60 @@ function PortfolioDetails() {
     });
     window.scrollTo(0, 0);
 
-    fetch("/assets/data/portfolioData.json")
-    .then()
+    // Determine the correct data source based on the environment
+    // - During local development: load JSON directly from the public folder
+    // - In production (deployed site): fetch JSON from GitHub raw URL
+    const baseUrl =
+      import.meta.env.MODE === "development"
+        ? "/assets/data/portfolioData.json"
+        : "https://raw.githubusercontent.com/Smy619/projet-12-portfolio/main/public/assets/data/portfolioData.json";
+
+    fetch(`${baseUrl}?t=${Date.now()}`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Network response was not ok: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        const found = data.find((item) => item.id === Number(id));
+        setProject(found);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching portfolio data:", error);
+        setLoading(false);
+      });
   }, [id]);
 
-  if (!project) {
-    return (
-      <section className="portfolio-details section">
-        <div className="container text-center">
-          <h2>Project not found</h2>
-          <Link to="/" className="btn btn-primary mt-3">
-            Back to Home
-          </Link>
-        </div>
-      </section>
-    );
-  }
+  useEffect(() => {
+    if (project) {
+      document.title = `${project.title} | Solène Dev Studio`;
+    }
+  }, [project]);
+  //  Add loading screen before rendering project details
+    if (loading) {
+      return (
+        <section className="portfolio-details section">
+          <div className="container text-center py-5">
+            <h2>Loading project details...</h2>
+          </div>
+        </section>
+      );
+    }
+
+    if (!project) {
+      return (
+        <section className="portfolio-details section">
+          <div className="container text-center py-5">
+            <h2>Project not found</h2>
+            <Link to="/" className="btn btn-primary mt-3">
+              Back to Home
+            </Link>
+          </div>
+        </section>
+      );
+    }
 
   return (
     <section id="portfolio-details" className="portfolio-details section">
@@ -71,7 +110,17 @@ function PortfolioDetails() {
             >
               {project.images.map((image, index) => (
                 <SwiperSlide key={index}>
-                  <img src={image} alt={`${project.title}-${index}`} />
+                  <img
+                    src={
+                      image.startsWith("http")
+                        ? image
+                        : `${import.meta.env.BASE_URL}${image.replace(
+                            /^\//,
+                            ""
+                          )}`
+                    }
+                    alt={`${project.title}-${index}`}
+                  />
                 </SwiperSlide>
               ))}
             </Swiper>
@@ -99,11 +148,11 @@ function PortfolioDetails() {
               <h3>Project information</h3>
               <ul>
                 <li>
-                  <strong>Category</strong>
+                  <strong>Category:</strong>
                   {project.category}
                 </li>
                 <li>
-                  <strong>Status</strong> {project.status}
+                  <strong>Status:</strong> {project.status}
                 </li>
                 <li>
                   <strong>Year:</strong>
@@ -112,7 +161,7 @@ function PortfolioDetails() {
                 {project.url && (
                   <>
                     <li>
-                      <strong>Project URL</strong>{" "}
+                      <strong>Project URL:</strong>{" "}
                       <a
                         href={project.url}
                         target="_blank"
@@ -138,7 +187,7 @@ function PortfolioDetails() {
           </div>
         </div>
       </div>
-      <Footer />
+    
     </section>
   );
 }

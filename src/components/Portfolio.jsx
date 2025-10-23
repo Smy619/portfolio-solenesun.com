@@ -7,19 +7,32 @@ import "../assets/styles/_projects.scss";
 
 function Projects() {
   const [portfolioData, setPortfolioData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   // Fetch portfolio data from external JSON file
   useEffect(() => {
-    fetch(
-      "https://raw.githubusercontent.com/Smy619/projet-12-portfolio/refs/heads/main/src/data/portfolioData.json"
-    )
-      .then((response) => response.json())
-      .then((data) => setPortfolioData(data))
-      .catch((error) => console.error("Error fetching portfolio data:", error));
+    const url = `https://raw.githubusercontent.com/Smy619/projet-12-portfolio/main/public/assets/data/portfolioData.json`;
+    
+    fetch(url)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Network response was not ok: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setPortfolioData(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching portfolio data:", error);
+        setLoading(false);
+      });
   }, []);
 
   // Initialize GLightbox one time
   useEffect(() => {
+    if (!portfolioData.length) return;
     setTimeout(() => {
       if (document.activeElement && document.activeElement.blur) {
         document.activeElement.blur();
@@ -53,16 +66,7 @@ function Projects() {
 
     document.addEventListener("focusin", handleFocusReset);
 
-    return () => {
-      document.removeEventListener("focusin", handleFocusReset);
-      lightbox.destroy();
-    };
-  }, [portfolioData]);
-
-  // Initialize Isotope and filtering
-  useEffect(() => {
-    if (!portfolioData.length) return; // Wait until portfolio data is loaded
-
+    // Initialize Isotope and filtering
     let isotopeInstance;
     const isotopeContainer = document.querySelector(".gallery-container");
     const filterButtons = document.querySelectorAll(".gallery-filters li");
@@ -93,12 +97,16 @@ function Projects() {
     });
 
     return () => {
+      document.removeEventListener("focusin", handleFocusReset);
+      lightbox.destroy();
       filterButtons.forEach((button) => {
         button.removeEventListener("click", handleFilterClick);
       });
       if (isotopeInstance) isotopeInstance.destroy();
     };
   }, [portfolioData]);
+
+  if (loading) return <p>Loading projects...</p>;
 
   // Render Projects Section
   return (
