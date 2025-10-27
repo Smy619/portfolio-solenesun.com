@@ -1,8 +1,10 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "../assets/styles/_skills.scss";
-import "../assets/styles/_timeline.scss"; // ⚠️ 原 _resume.scss 改为 _timeline.scss
+import "../assets/styles/_timeline.scss";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import CV from "../pages/CV";
 
 function SkillsAndResume() {
   useEffect(() => {
@@ -109,13 +111,15 @@ function SkillsAndResume() {
       </section>
 
       {/* -------- Resume Section -------- */}
-      <section
-        id="timeline"
-        className="timeline-section section-block bg-soft"
-      >
+      <section id="timeline" className="timeline-section section-block bg-soft">
         <div className="container" data-aos="fade-up">
           <div className="block-title">
             <h2>Resume</h2>
+
+            <Link to="/cv" className="cv">
+              View CV Online
+            </Link>
+
             <p>
               My learning path and professional experience — from web
               integration to modern front-end development.

@@ -1,0 +1,161 @@
+.cv-page {
+  background: #f5f5f5;
+  padding: 40px 0;
+
+  .cv-container {
+    width: 75%;
+    margin: auto;
+    background: #fff;
+    display: flex;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0px 6px 20px rgba(0,0,0,0.08);
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      width: 92%;
+    }
+  }
+
+  /* ===== LEFT SIDEBAR ===== */
+  .cv-sidebar {
+    background: #2b7a69; // 绿色（你可以用 $primary-color）
+    color: #fff;
+    padding: 40px 25px;
+    width: 30%;
+    
+   .cv-photo {
+      width: 120px;
+      height: 120px;
+      margin: auto;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 25px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      margin-top: 25px;
+      border-bottom: 1px solid rgba(255,255,255,0.3);
+      padding-bottom: 8px;
+      margin-bottom: 8px;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        margin: 8px 0;
+        font-size: 0.95rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        i {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  /* ===== RIGHT CONTENT ===== */
+  .cv-content {
+    width: 70%;
+    padding: 40px;
+
+   
+    .cv-header {
+      h1 {
+        font-size: 2.2rem;
+        font-weight: 800;
+        margin-bottom: 4px;
+        color: #2b7a69;
+      }
+
+      h4 {
+        font-size: 1.1rem;
+        font-weight: 400;
+        margin-bottom: 35px;
+        color: #555;
+      }
+    }
+
+    section {
+      margin-bottom: 40px;
+
+      h2 {
+        color: #2b7a69;
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #2b7a69;
+        display: inline-block;
+        padding-bottom: 3px;
+      }
+    }
+
+    .cv-item {
+      margin-bottom: 22px;
+
+      h4 {
+        font-weight: 600;
+        margin-bottom: 3px;
+      }
+
+      .cv-date {
+        color: #999;
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+        display: inline-block;
+      }
+
+      p {
+        color: #555;
+        font-size: 0.95rem;
+        line-height: 1.4;
+      }
+    }
+
+    /* ===== Skill Bars ===== */
+    .cv-skill-bars {
+
+      .skill-bar {
+        margin-bottom: 18px;
+
+        p {
+          margin: 0 0 5px 0;
+          font-size: 0.95rem;
+        }
+
+        .bar {
+          width: 100%;
+          background: #eee;
+          height: 6px;
+          border-radius: 4px;
+          overflow: hidden;
+
+          span {
+            display: block;
+            height: 6px;
+            background: #2b7a69;
+            border-radius: 4px;
+            animation: fillBar 1.3s ease;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ===== BAR ANIMATION ===== */
+@keyframes fillBar {
+  from { width: 0; }
+  to   { width: inherit; }
+}
+

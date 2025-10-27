@@ -1,18 +1,13 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
+import Home from "./pages/Home";
 import Preloader from "./components/Preloader";
 import Header from "./components/Header";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Stats from "./components/Stats";
-import SkillsAndResume from "./components/SkillsAndResume";
-import Studio from "./components/Studio"
-import StudioDetails from "./components/StudioDetails";
-import Portfolio from "./components/Portfolio";
-import PortfolioDetails from "./components/PortfolioDetails";
-import Contact from "./components/Contact"
+import CV from "./pages/CV";
+import StudioDetails from "./pages/StudioDetails";
+import PortfolioDetails from "./pages/PortfolioDetails";
 import Footer from "./components/Footer";
-import NotFound from "./components/NotFound";
+import NotFound from "./pages/NotFound";
 import ScrollTop from "./components/ScrollTop";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -32,20 +27,8 @@ function App() {
       <Header />
       <main className="main">
         <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <Hero />
-                <About />
-                <Stats />
-                <SkillsAndResume />
-                <Studio />
-                <Portfolio />
-                <Contact />
-              </>
-            }
-          />
+          <Route path="/" element={<Home />} />
+          <Route path="/cv" element={<CV />} />
           <Route path="/studio-Details" element={<StudioDetails />} />
           <Route path="/portfolio-details/:id" element={<PortfolioDetails />} />
           <Route path="*" element={<NotFound />} />

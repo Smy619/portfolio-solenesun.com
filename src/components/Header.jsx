@@ -36,7 +36,7 @@ function Header() {
   }, [showMenu]);
 
   const navItems = [
-    { href: "#hero", label: "Home", icon: "bi-house" },
+    { href: "/", label: "Home", icon: "bi-house" },
     { href: "#profile", label: "About", icon: "bi-person" },
     { href: "#stats", label: "Stats", icon: "bi-graph-up-arrow" },
     { href: "#expertise", label: "Skills", icon: "bi-cpu" },

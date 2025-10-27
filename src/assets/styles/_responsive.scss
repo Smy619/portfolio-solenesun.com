@@ -102,7 +102,19 @@
       padding: 40px 20px;
     }
   }
-  
+
+   .cv-content {
+      width: 100%;
+      padding: 25px;
+    }
+   .cv-sidebar {
+      width: 100%;
+      text-align: center;
+    }
+    .cv-container {
+      flex-direction: column;
+      width: 92%;
+    }
   .footer {
     h3 {
       font-size: 24px;

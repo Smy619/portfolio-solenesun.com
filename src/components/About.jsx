@@ -9,9 +9,7 @@ function About() {
         <div className="block-title">
           <h2>About</h2>
           <p>
-            Passionate web developer based in France. I love building clean,
-            responsive, and accessible websites with attention to detail and
-            modern design.
+           Passionate web developer based in France, focusing on building structured, component-based websites and applications with clean architecture, responsive design and attention to detail.
           </p>
         </div>
 
@@ -29,56 +27,9 @@ function About() {
             data-aos="fade-left"
             data-aos-delay="200"
           >
-            <h2>Frontend Developer &amp; Web Integrator.</h2>
-            <p className="text-secondary">
-              Based in France • Building digital experiences with heart.
-            </p>
-            <p className="text-italic">
-              Turning design ideas into fast, responsive and elegant websites.
-            </p>
-
-            <div className="row">
-              <div className="col-lg-6">
-                <ul>
-                  <li>
-                    <i className="bi bi-chevron-right"></i>
-                    <strong>Website:</strong>{" "}
-                    <span>www.solensun.com</span>
-                  </li>
-                  <li>
-                    <i className="bi bi-chevron-right"></i>
-                    <strong>Phone:</strong>{" "}
-                    <span>+33 6 01 22 84 47 </span>
-                  </li>
-                  <li>
-                    <i className="bi bi-chevron-right"></i>
-                    <strong>City:</strong>{" "}
-                    <span>La Roche-sur-Yon, France</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="col-lg-6">
-                <ul>
-                  <li>
-                    <i className="bi bi-chevron-right"></i>
-                    <strong>Degree:</strong>{" "}
-                    <span>Bac+2 / Web Integration</span>
-                  </li>
-                  <li>
-                    <i className="bi bi-chevron-right"></i>
-                    <strong>Email:</strong>{" "}
-                    <span>contact@solenesun.com</span>
-                  </li>
-                  <li>
-                    <i className="bi bi-chevron-right"></i>
-                    <strong>Freelance:</strong>{" "}
-                    <span>Available</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
+            <h2>Développeur Front-End React • Architecture de composants • Refonte UI &amp; optimisation • Performance & accessibilité • API REST • Remote</h2>
+            <p className="sous-text">Focused on structured architecture, maintainable code and modern UI systems.</p>
+            
             <p>
               I’ve been living in France for over 18 years, continuously
               learning and creating. My goal is to build websites that blend
