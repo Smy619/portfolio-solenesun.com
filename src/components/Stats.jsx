@@ -9,8 +9,8 @@ function Stats() {
   
   const statsData = [
     { icon: "bi bi-emoji-smile", end: 1, label: "Happy Clients" },
-    { icon: "bi bi-journal-richtext", end: 3, label: "Projects Completed" },
-    { icon: "bi bi-headset", end: 180, label: "Hours Of Support" },
+    { icon: "bi bi-journal-richtext", end: 10, label: "Projects Completed" },
+    { icon: "bi bi-headset", end: 630, label: "Hours Of Support" },
     { icon: "bi bi-people", end: 1, label: "Hard Workers" },
   ];
   return (

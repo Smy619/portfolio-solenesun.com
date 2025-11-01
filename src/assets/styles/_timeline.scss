@@ -5,7 +5,7 @@
    Description: Timeline-style resume section (Education + Experience)
    ========================================================= */
 
-@use './variables';
+@use "./variables";
 
 /* ----------------------------
    Resume Section
@@ -41,7 +41,11 @@
 
     &:hover {
       transform: translateX(5px);
-      border-left-color: color-mix(in srgb, var(--accent-color), transparent 30%);
+      border-left-color: color-mix(
+        in srgb,
+        var(--accent-color),
+        transparent 30%
+      );
     }
 
     h4 {
@@ -77,7 +81,7 @@
       padding-bottom: 0;
     }
   }
-  .cv{
-   color:var(--accent-color);
- }
+  .mt-5 {
+    margin-top: 2rem !important;
+  }
 }

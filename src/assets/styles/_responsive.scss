@@ -4,40 +4,92 @@
    Description: Centralized responsive breakpoints from MyResume.
    ========================================================= */
 
-/* 🖥️ Large screens (min-width: 1200px and max-width: 1600px) */
+/* Large screens (min-width: 1200px and max-width: 1600px) */
 @media (min-width: 1200px) and (max-width: 1600px) {
-  .site-header ~main {
+  .site-header ~ main {
     margin-left: 160px;
   }
 
-  .site-header ~main .hero {
+  .site-header ~ main .hero {
     margin-left: -160px;
-    width:100vw;
+    width: 100vw;
   }
 }
 
-/* 💻 Desktops & laptops (max-width: 1199px) */
+/* Desktops & laptops (max-width: 1199px) */
 @media (max-width: 1199px) {
   .site-header {
     background-color: var(--background-color);
-    border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
     width: 300px;
     left: -100%;
   }
+  .main-nav a,
+  .main-nav a:focus {
+    max-width: 56px;
+  }
+  .main-nav a span,
+  .main-nav a:focus span {
+    display: none;
+  }
+  .cv-page {
+    padding: 40px 0;
+
+    .cv-container {
+      width: 90%;
+      max-width: 900px;
+      flex-direction: row;
+    }
+
+    .cv-sidebar {
+      width: 35%;
+      padding: 40px 20px;
+
+      .cv-photo {
+        width: 110px;
+        height: 110px;
+      }
+
+      .section-green-1,
+      .section-green-2,
+      .section-green-3,
+      .section-green-4 {
+        padding: 20px 10px;
+      }
+
+      h3 {
+        font-size: 1rem;
+      }
+    }
+
+    .cv-content {
+      width: 65%;
+      padding: 40px 30px;
+
+      h1 {
+        font-size: 1.8rem;
+      }
+      h4 {
+        font-size: 1rem;
+      }
+      p,
+      li {
+        font-size: 0.9rem;
+      }
+    }
+  }
 }
 
-
-/* 📗 Tablets (min-width: 992px) */
+/* Tablets (min-width: 992px) */
 @media (min-width: 992px) {
   .main-nav a,
   .main-nav a:focus {
     max-width: 56px;
   }
-
   .main-nav a span,
   .main-nav a:focus span {
     display: none;
   }
+
   .footer {
     padding: 30px 0;
 
@@ -63,8 +115,16 @@
   }
 }
 
-/* 📘 Tablets & small screens (max-width: 768px) */
+/* Tablets & small screens (max-width: 768px) */
 @media (max-width: 768px) {
+  .main-nav a,
+  .main-nav a:focus {
+    max-width: 56px;
+  }
+  .main-nav a span,
+  .main-nav a:focus span {
+    display: none;
+  }
   .hero h2 {
     font-size: 32px;
   }
@@ -74,7 +134,7 @@
   [data-aos-delay] {
     transition-delay: 0 !important;
   }
-  
+
   .portfolio-details {
     .portfolio-info,
     .portfolio-description {
@@ -95,26 +155,80 @@
   }
 
   .studio {
-     
     padding: 60px 0;
 
     .studio-item {
       padding: 40px 20px;
     }
   }
+  .cv-page {
+    padding: 30px 10px;
 
-   .cv-content {
-      width: 100%;
-      padding: 25px;
-    }
-   .cv-sidebar {
-      width: 100%;
-      text-align: center;
-    }
     .cv-container {
       flex-direction: column;
-      width: 92%;
+      width: 100%;
+      max-width: 100%;
+      border-radius: 12px;
     }
+
+    .cv-sidebar {
+      width: 100%;
+      border-radius: 12px 12px 0 0;
+      box-shadow: none;
+      padding: 30px 20px;
+      align-items: center;
+      text-align: center;
+
+      .cv-photo {
+        width: 100px;
+        height: 100px;
+      }
+
+      .section-green-1,
+      .section-green-2,
+      .section-green-3,
+      .section-green-4 {
+        padding: 20px 0;
+        align-items: center;
+        text-align: center;
+      }
+
+      .skills-list {
+        width: 100%;
+      }
+    }
+
+    .cv-content {
+      width: 100%;
+      padding: 30px 20px;
+      border-radius: 0 0 12px 12px;
+      box-shadow: none;
+      text-align: left;
+
+      h1 {
+        font-size: 1.6rem;
+      }
+      h4 {
+        font-size: 0.95rem;
+      }
+      p,
+      li {
+        font-size: 0.9rem;
+      }
+
+      .cv-skill-bars .bar {
+        height: 5px;
+      }
+    }
+
+    .language-grid {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 30px;
+    }
+  }
   .footer {
     h3 {
       font-size: 24px;
@@ -129,7 +243,6 @@
       justify-content: center;
       flex-direction: row;
       display: flex;
-    
 
       a {
         width: 32px;
@@ -147,12 +260,25 @@
       font-size: 12px;
     }
   }
+  .studio {
+    padding: 60px 20px;
+  }
+
+  .studio-item {
+    padding: 40px 20px;
+  }
 }
 
-
-/* 📕 Mobile devices (max-width: 575px) */
+/* Mobile devices (max-width: 575px) */
 @media (max-width: 575px) {
-
+  .main-nav a,
+  .main-nav a:focus {
+    max-width: 56px;
+  }
+  .main-nav a span,
+  .main-nav a:focus span {
+    display: none;
+  }
   /* Portfolio filters */
   .portfolio .portfolio-filters li {
     font-size: 14px;
@@ -163,6 +289,35 @@
   .portfolio-details .swiper-button-prev,
   .portfolio-details .swiper-button-next {
     display: none;
+  }
+  .cv-sidebar {
+    padding: 20px 15px !important;
+
+    .cv-photo {
+      width: 80px;
+      height: 80px;
+    }
+
+    h3 {
+      font-size: 0.95rem;
+    }
+  }
+
+  .cv-content {
+    padding: 20px 15px !important;
+
+    h1 {
+      font-size: 1.4rem;
+    }
+
+    h4 {
+      font-size: 0.9rem;
+    }
+
+    p,
+    li {
+      font-size: 0.85rem;
+    }
   }
 
   .footer {
@@ -193,7 +348,8 @@
     .copyright {
       font-size: 12px;
       padding-top: 15px;
-      border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+      border-top: 1px solid
+        color-mix(in srgb, var(--default-color), transparent 90%);
     }
 
     .credits {

@@ -1,42 +1,52 @@
 import "../assets/styles/_profile.scss";
 
 function About() {
-  const profileImg = "/assets/img/profile-img.jpg";
-
   return (
     <section id="profile" className="profile-section section-block bg-soft">
       <div className="container" data-aos="fade-up">
-        <div className="block-title">
+        {/* ===== Title ===== */}
+        <div className="block-title text-center">
           <h2>About</h2>
           <p>
-           Passionate web developer based in France, focusing on building structured, component-based websites and applications with clean architecture, responsive design and attention to detail.
+            Front-end developer based in France, passionate about rebuilding and modernizing
+            websites through structured architecture, clean design, and automated workflows.
           </p>
         </div>
 
-        <div className="row gy-4">
-          <div className="col-lg-4" data-aos="fade-right" data-aos-delay="100">
-            <img
-              src={profileImg}
-              className="img-fluid rounded"
-              alt="Profile"
-            />
-          </div>
+        {/* ===== Story Content ===== */}
+        <div
+          className="profile-content text-center"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <p>
+            I love React for its structure — how every component connects logically to form
+            a system that just makes sense. And I love JavaScript for the way it brings
+            those systems to life, transforming static layouts into meaningful interactions.
+          </p>
 
-          <div
-            className="col-lg-8 profile-content"
-            data-aos="fade-left"
-            data-aos-delay="200"
-          >
-            <h2>Développeur Front-End React • Architecture de composants • Refonte UI &amp; optimisation • Performance & accessibilité • API REST • Remote</h2>
-            <p className="sous-text">Focused on structured architecture, maintainable code and modern UI systems.</p>
-            
-            <p>
-              I’ve been living in France for over 18 years, continuously
-              learning and creating. My goal is to build websites that blend
-              aesthetic beauty with strong functionality — a balance between
-              logic and art.
-            </p>
-          </div>
+          <p>
+            My favorite projects are often not new creations but rebuilds. I enjoy taking
+            older websites, dissecting their architecture, and giving them a modern form —
+            cleaner, faster, and more SEO-friendly. There's something deeply satisfying about
+            turning disorganized code into a clear, modular structure that performs beautifully.
+          </p>
+
+          <p>
+            Beyond rebuilding, I focus on automation — creating processes and configuration
+            systems that make each project easier to maintain, scale, and evolve. I believe
+            good development isn’t just about solving problems once, but about building systems
+            that solve them again and again.
+          </p>
+
+          <p>
+            For me, web development is a craft of clarity: rebuilding what exists, refining what
+            works, and automating what comes next.
+          </p>
+
+          <p className="sous-text mt-3">
+            <em>Rebuilding structure, refining systems, and automating what comes next.</em>
+          </p>
         </div>
       </div>
     </section>

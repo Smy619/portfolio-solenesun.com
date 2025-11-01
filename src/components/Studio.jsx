@@ -7,9 +7,6 @@ function Studio() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    //During local dev -> from public folder
-    //During deployement -> from Github raw
-
     const baseUrl =
       import.meta.env.MODE === "development"
         ? "/assets/data/studioServices.json"
@@ -29,39 +26,52 @@ function Studio() {
         setLoading(false);
       });
   }, []);
+
   if (loading) return <p>Loading services...</p>;
 
   return (
     <section id="studio" className="studio section">
-      <div className="container block-title" data-aos="fade-up">
-        <h2>Solene Dev Studio</h2>
-        <p className="subtitle">
-          Bulding digital experiences with clarity, creativity, and code.
-        </p>
+      <div className="container" data-aos="fade-up">
+        {/* ===== Title ===== */}
+        <div className="block-title text-center">
+          <h2>Solene Dev Studio</h2>
+          <p>Building digital experiences with clarity, creativity, and code.</p>
+        </div>
 
+         {/* ===== Button ===== */}
         <div className="text-center mt-5">
           <Link to="/studio-details" className="btn btn-outline-primary">
             Discover Full Studio →
           </Link>
         </div>
 
-        <div className="row gy-4 mt-4">
+        {/* ===== Grid ===== */}
+        <div className="studio-grid">
           {services.map((service, index) => (
-            <div key={index} className="col-lg-4 col-md-6">
-              <div
-                className="service-box"
-                data-aos="zoom-in"
-                data-aos-delay={100 * (index + 1)}
-              >
-                <div className="icon">
-                  <i className={service.icon}></i>
-                </div>
-                <h4>{service.title}</h4>
-                <p>{service.description}</p>
+            <div
+              key={index}
+              className={`studio-item ${service.className}`} 
+              data-aos="zoom-in"
+              data-aos-delay={100 * (index + 1)}
+            >
+              <div className="icon">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M50 0L100 25V75L50 100L0 75V25Z" />
+                </svg>
+                <i className={service.icon}></i>
               </div>
+              <h4>{service.title}</h4>
+              <p>{service.description}</p>
+              {service.link && (
+                <Link to={service.link} className="learn-more">
+                  Learn more <i className="bi bi-arrow-right"></i>
+                </Link>
+              )}
             </div>
           ))}
         </div>
+
+       
       </div>
     </section>
   );

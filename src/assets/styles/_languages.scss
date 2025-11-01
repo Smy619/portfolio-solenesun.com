@@ -1,0 +1,32 @@
+.language-circle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  margin-bottom: 30px;
+  .circle-wrapper {
+    position: relative;
+    width: 100px;
+    height: 100px;
+  }
+
+  .circle-bg {
+    stroke: rgba(255, 255, 255, 0.25);
+  }
+
+  .circle-progress {
+    stroke: #eaf4f1;
+    transition: stroke-dashoffset 1.5s ease-in-out;
+  }
+  text {
+    dominant-baseline: middle;
+  }
+
+  p {
+    margin-top: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #fff;
+  }
+}

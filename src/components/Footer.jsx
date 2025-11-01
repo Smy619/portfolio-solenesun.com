@@ -23,6 +23,18 @@ function Footer() {
           >
             <i className="bi bi-linkedin"></i>
           </a>
+          <a
+            href="https://www.facebook.com/TingSunDev/"
+            aria-label="LinkedIn Profile"
+          >
+            <i className="bi bi-facebook"></i>
+          </a>
+          <a
+            href="https://x.com/SoleneDevStudio"
+            aria-label="LinkedIn Profile"
+          >
+            <i className="bi bi-twitter"></i>
+          </a>
         </div>
 
         <div className="footer-copy">
@@ -30,7 +42,7 @@ function Footer() {
           <strong>
             <span>Ting Sun</span>
           </strong>{" "}
-          . All Rights Reserved.
+         Rebuilt From Open-source Inspiration.
         </div>
       </div>
     </footer>

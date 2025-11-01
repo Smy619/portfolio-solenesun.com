@@ -22,7 +22,7 @@ return (
               <i className="bi bi-geo-alt flex-shrink-0"></i>
               <div>
                 <h3>Address</h3>
-                <p>24 rue du maroc 85000 la roche sur yon</p>
+                <p>Vendee , France</p>
               </div>
             </div>
 

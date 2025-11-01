@@ -15,12 +15,13 @@ function Hero() {
   { href: "https://github.com/Smy619", icon: "bi-github" },
   { href: "https://www.linkedin.com/in/tingsun85", icon: "bi-linkedin" },
   { href: "https://www.facebook.com/TingSunDev/", icon: "bi-facebook" },
+  { href: "https://x.com/SoleneDevStudio", icon: "bi-twitter" },
   { href: "mailto:contact@solenesun.com", icon: "bi-envelope" },
 ];
 
   useEffect(() => {
     const typed = new Typed(typedElement.current, {
-      strings: ["Web Developer.", "Front-end Engineer.", "Freelancer."],
+      strings: ["Web Developer.", "Front-end React.", "Freelancer."],
       typeSpeed: 70,
       backSpeed: 40,
       backDelay: 2000,

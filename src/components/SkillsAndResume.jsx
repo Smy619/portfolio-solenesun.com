@@ -4,7 +4,6 @@ import "../assets/styles/_skills.scss";
 import "../assets/styles/_timeline.scss";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import CV from "../pages/CV";
 
 function SkillsAndResume() {
   useEffect(() => {
@@ -34,7 +33,7 @@ function SkillsAndResume() {
                   <div
                     className="progress-bar"
                     style={{ width: "100%" }}
-                    aria-label="Html skill 90%"
+                    aria-label="Html skill 100%"
                   ></div>
                 </div>
               </div>
@@ -47,7 +46,7 @@ function SkillsAndResume() {
                   <div
                     className="progress-bar"
                     style={{ width: "95%" }}
-                    aria-label="CSS skill 90%"
+                    aria-label="CSS skill 95%"
                   ></div>
                 </div>
               </div>
@@ -75,7 +74,7 @@ function SkillsAndResume() {
                   <div
                     className="progress-bar"
                     style={{ width: "85%" }}
-                    aria-label="React skill 90%"
+                    aria-label="React skill 85%"
                   ></div>
                 </div>
               </div>
@@ -101,7 +100,7 @@ function SkillsAndResume() {
                   <div
                     className="progress-bar"
                     style={{ width: "85%" }}
-                    aria-label="SEO skill 90%"
+                    aria-label="SEO skill 85%"
                   ></div>
                 </div>
               </div>
@@ -115,15 +114,16 @@ function SkillsAndResume() {
         <div className="container" data-aos="fade-up">
           <div className="block-title">
             <h2>Resume</h2>
-
-            <Link to="/cv" className="cv">
-              View CV Online
-            </Link>
-
-            <p>
+           <p>
               My learning path and professional experience — from web
               integration to modern front-end development.
             </p>
+             {/* ===== Button ===== */}
+            <div className="text-center mt-5"> 
+              <Link to="/cv" className="btn btn-outline-primary">
+                View Cv Online
+              </Link>
+            </div>
           </div>
 
           <div className="row">
@@ -132,26 +132,24 @@ function SkillsAndResume() {
 
               <div className="timeline-item">
                 <h4>Web Integrator - OpenClassrooms</h4>
-                <h5>2024 - 2025</h5>
+                <h5>02/2025 - 11/2025</h5>
                 <p>
                   <em>Online Formation, France</em>
                 </p>
                 <p>
                   Completed multiple projects: responsive websites, CSS
-                  animations, JavaScript interfaces, and React applications.
+                  animations, JavaScript interfaces, SEO, API and React
+                  applications.
                 </p>
               </div>
 
               <div className="timeline-item">
-                <h4>React Application Developer (Bac+3)</h4>
-                <h5>2025 - 2026</h5>
+                <h4>MASTER’S DEGREE IN COMPUTER SCIENCE</h4>
+                <h5>2013 - 2015</h5>
                 <p>
-                  <em>OpenClassrooms</em>
+                  <em>Paris,France</em>
                 </p>
-                <p>
-                  Planned next formation: mastering full-stack development, API
-                  integration, and testing.
-                </p>
+                <p>Focus: Information Technology and Software Development.</p>
               </div>
             </div>
 
@@ -159,39 +157,61 @@ function SkillsAndResume() {
               <h3 className="timeline-title">Experience</h3>
 
               <div className="timeline-item">
-                <h4>Frontend Developer - Freelance</h4>
-                <h5>2024 - Present</h5>
-                <p>
-                  <em>Remote - France</em>
-                </p>
-                <ul>
-                  <li>
-                    Developed multiple WordPress and static websites for small
-                    businesses.
-                  </li>
-                  <li>
-                    Built restaurant & portfolio templates (MonResto, Yuzu,
-                    MesResto SaaS).
-                  </li>
-                  <li>
-                    Integrated SEO best practices and accessibility
-                    optimizations.
-                  </li>
-                </ul>
-              </div>
-
-              <div className="timeline-item">
-                <h4>Project-Based Developer — Training Projects</h4>
-                <h5>2024 - 2025</h5>
+                <h4>Web integrator</h4>
+                <h5>02/2025 - 11/2025</h5>
                 <p>
                   <em>OpenClassrooms</em>
                 </p>
                 <ul>
                   <li>
-                    Project P6: Portfolio Architecte – Dynamic API + Modal
+                    Built dynamic React components with reusable architecture
+                    (Project P6)
                   </li>
-                  <li>Project P7: Kasa – React Router + Collapses</li>
-                  <li>Project P8: SEO Optimization – Nina Carducci</li>
+                  <li>
+                    Developed responsive front-end apps with React Router and
+                    API integration (Project P7)
+                  </li>
+                  <li>
+                    Optimized website SEO and accessibility following Lighthouse
+                    & WAVE audits (Project P8)
+                  </li>
+                  <li>
+                    Designed a secure banking dashboard with Redux Toolkit and
+                    MongoDB (Project P10)
+                  </li>
+                </ul>
+              </div>
+
+              <div className="timeline-item">
+                <h4>IT Systems Consulting</h4>
+                <h5>04/2015 - 09/2019</h5>
+                <p>
+                  <em>Freelance / Self-employed</em>
+                </p>
+                <ul>
+                  <li>
+                    Provided IT consulting services for small and medium-sized
+                    businesses, offering local technical support.
+                  </li>
+                  <li>
+                    Implemented and maintained IT infrastructures and business
+                    software solutions.
+                  </li>
+                  <li>
+                    Diagnosed and resolved technical issues to ensure system
+                    reliability and performance.
+                  </li>
+                  <li>
+                    Optimized workstation configurations and delivered technical
+                    improvement recommendations.
+                  </li>
+                  <li>
+                    Trained users on new tools, systems, and work environments.
+                  </li>
+                  <li>
+                    Worked independently with accountability, managing multiple
+                    clients simultaneously.
+                  </li>
                 </ul>
               </div>
             </div>

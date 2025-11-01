@@ -38,11 +38,11 @@ function StudioDetails() {
                 <li>
                   <Link to="/">Home</Link>
                 </li>
-                <li className="current">Solène Dev Studio</li>
+                <li className="current">Solene Dev Studio</li>
               </ol>
             </nav>
 
-            <h2>Solène Dev Studio</h2>
+            <h2>Solene Dev Studio</h2>
             <p className="subtitle">
               Discover the full range of creative and technical services
               designed to bring your ideas to life.
